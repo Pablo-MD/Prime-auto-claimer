@@ -29,7 +29,3 @@ def redeem(key):
         main_window.child_window(title="OK", control_type="Button").wrapper_object().click_input()
     except:
         main_window.child_window(title="Cancel", control_type="Button").wrapper_object().click_input()
-
-    
-if __name__ == '__main__':
-    redeem(key='DQZXCFD054DD376F52')
