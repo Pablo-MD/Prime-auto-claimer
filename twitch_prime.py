@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import GOG_Redeemer as GOG
-from datetime import datetime, time as dt_time, timedelta
+import os
 import time as tm
 
 # Use a navegator with only one profile
@@ -13,7 +13,7 @@ import time as tm
 # Make sure to have your Twitch account Linked with your Epic Games account
 
 firefox_options = Options()
-firefox_profile_path = "C:/Users/pablo/AppData/Roaming/Mozilla/Firefox/Profiles/itj3da6i.default-release"
+firefox_profile_path = os.path.expanduser("~") + r"\AppData\Roaming\Mozilla\Firefox\Profiles\itj3da6i.default-release"
 firefox_options.add_argument("-profile")
 firefox_options.add_argument(firefox_profile_path)
 driver = webdriver.Firefox(options=firefox_options)
@@ -67,9 +67,6 @@ for i in range(2, len(primeElements)):
         print(error)
         pass
 
-
-    
-    
 
 from selenium.common.exceptions import NoSuchElementException
 def check_exists_by_xpath(xpath):
